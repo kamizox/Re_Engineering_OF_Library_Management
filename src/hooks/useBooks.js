@@ -25,6 +25,7 @@ const SEED_BOOKS = [
 // ✅ KEY FIX: PDF bhi "image" resource type se upload karo
 // Cloudinary "image" type se upload ki gayi files PUBLICLY accessible hoti hain
 // "raw" type files free plan mein private hoti hain (401 error)
+//
 async function uploadToCloudinary(file, onProgress) {
   const formData = new FormData();
   formData.append('file', file);
