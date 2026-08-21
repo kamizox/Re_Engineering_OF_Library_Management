@@ -10,9 +10,8 @@ import { auth, googleProvider } from '../firebase/config';
 
 const AuthContext = createContext(null);
 
-// ✅ ADMIN EMAIL — Sirf yeh email admin hogi
-// Apni real email yahan daalo
-const ADMIN_EMAIL = 'kamranalam4555@gmail.com'; // 👈 CHANGE THIS to your email
+
+const ADMIN_EMAIL = 'kamranalam4555@gmail.com'; 
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
@@ -40,8 +39,7 @@ export function AuthProvider({ children }) {
   const logout = () => signOut(auth);
   const resetPassword = (email) => sendPasswordResetEmail(auth, email);
 
-  // ✅ SECURE: Sirf ADMIN_EMAIL wala user admin hoga
-  // Koi bhi student signup karke admin nahi ban sakta
+
   const isAdmin = user?.email === ADMIN_EMAIL;
 
   return (
